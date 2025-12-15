@@ -52,7 +52,7 @@ def demo_hr_payroll():
     print()
     
     # 4. Process Payroll
-    print("4. PROCESSING PAYROLL - March 2024")
+    print("4. PROCESSING PAYROLL - March 2025")
     print("-" * 70)
     pay_start = date(2025, 3, 1)
     pay_end = date(2025, 3, 31)
@@ -73,7 +73,7 @@ def demo_hr_payroll():
     tax_summary = hr_app.get_yearly_tax_summary(7001, 2025)
     if tax_summary:
         print(f"  Employee: Victor Lee (7001)")
-        print(f"  Year: 2024")
+        print(f"  Year: 2025")
         print(f"  Pay Periods: {tax_summary['pay_periods']}")
         print(f"  Total Gross Pay: ${tax_summary['total_gross']:,.2f}")
         print(f"  Federal Tax:     ${tax_summary['total_federal']:,.2f}")

@@ -185,7 +185,7 @@ def generate_job_history():
         # Current jobs
         (1001, 'Senior Software Engineer', date(2023, 1, 1), 110000, True),
         (1002, 'Software Engineer', date(2023, 6, 1), 85000, True),
-        (1003, 'Junior Developer', date(2024, 1, 1), 65000, True),
+        (1003, 'Junior Developer', date(2025, 1, 1), 65000, True),
         (1004, 'Tech Lead', date(2022, 1, 1), 130000, True),
         (1005, 'DevOps Engineer', date(2023, 3, 1), 95000, True),
         
@@ -288,12 +288,12 @@ def generate_buildings_and_offices():
 def generate_projects():
     """Generate project data"""
     projects = [
-        (1, 'Customer Portal Redesign', 250000, date(2024, 1, 15), None, 1004, 1),
-        (2, 'Mobile App Development', 350000, date(2023, 9, 1), date(2024, 3, 1), 1001, 1),
-        (3, 'Data Migration Project', 180000, date(2024, 2, 1), None, 3001, 3),
-        (4, 'Marketing Campaign Q1', 120000, date(2024, 1, 1), date(2024, 3, 31), 10001, 10),
+        (1, 'Customer Portal Redesign', 250000, date(2025, 1, 15), None, 1004, 1),
+        (2, 'Mobile App Development', 350000, date(2023, 9, 1), date(2025, 3, 1), 1001, 1),
+        (3, 'Data Migration Project', 180000, date(2025, 2, 1), None, 3001, 3),
+        (4, 'Marketing Campaign Q1', 120000, date(2025, 1, 1), date(2025, 3, 31), 10001, 10),
         (5, 'Product Line Expansion', 500000, date(2023, 11, 1), None, 4001, 4),
-        (6, 'Sales CRM Implementation', 200000, date(2024, 1, 10), None, 9001, 9),
+        (6, 'Sales CRM Implementation', 200000, date(2025, 1, 10), None, 9001, 9),
         (7, 'Automated Testing Framework', 150000, date(2023, 10, 1), None, 2001, 2),
     ]
     
@@ -314,26 +314,26 @@ def generate_employee_projects():
     """Generate employee-project assignments"""
     assignments = [
         # Project 1: Customer Portal Redesign (Active)
-        (1004, 1, 'Project Manager', 120, date(2024, 1, 15), None, True),
-        (1001, 1, 'Lead Developer', 200, date(2024, 1, 15), None, True),
-        (1002, 1, 'Backend Developer', 180, date(2024, 1, 15), None, True),
-        (1003, 1, 'Frontend Developer', 160, date(2024, 1, 20), None, True),
-        (2002, 1, 'QA Engineer', 80, date(2024, 2, 1), None, True),
+        (1004, 1, 'Project Manager', 120, date(2025, 1, 15), None, True),
+        (1001, 1, 'Lead Developer', 200, date(2025, 1, 15), None, True),
+        (1002, 1, 'Backend Developer', 180, date(2025, 1, 15), None, True),
+        (1003, 1, 'Frontend Developer', 160, date(2025, 1, 20), None, True),
+        (2002, 1, 'QA Engineer', 80, date(2025, 2, 1), None, True),
         
         # Project 2: Mobile App (Completed)
-        (1001, 2, 'Technical Lead', 450, date(2023, 9, 1), date(2024, 3, 1), False),
-        (1002, 2, 'Developer', 400, date(2023, 9, 1), date(2024, 3, 1), False),
-        (2003, 2, 'QA Automation', 200, date(2023, 11, 1), date(2024, 3, 1), False),
+        (1001, 2, 'Technical Lead', 450, date(2023, 9, 1), date(2025, 3, 1), False),
+        (1002, 2, 'Developer', 400, date(2023, 9, 1), date(2025, 3, 1), False),
+        (2003, 2, 'QA Automation', 200, date(2023, 11, 1), date(2025, 3, 1), False),
         
         # Project 3: Data Migration (Active)
-        (3001, 3, 'Project Lead', 150, date(2024, 2, 1), None, True),
-        (3002, 3, 'Systems Admin', 180, date(2024, 2, 1), None, True),
-        (3003, 3, 'Network Support', 120, date(2024, 2, 5), None, True),
+        (3001, 3, 'Project Lead', 150, date(2025, 2, 1), None, True),
+        (3002, 3, 'Systems Admin', 180, date(2025, 2, 1), None, True),
+        (3003, 3, 'Network Support', 120, date(2025, 2, 5), None, True),
         
         # Project 4: Marketing Campaign (Completed)
-        (10001, 4, 'Campaign Director', 220, date(2024, 1, 1), date(2024, 3, 31), False),
-        (10002, 4, 'Campaign Manager', 200, date(2024, 1, 1), date(2024, 3, 31), False),
-        (10003, 4, 'Content Creator', 180, date(2024, 1, 1), date(2024, 3, 31), False),
+        (10001, 4, 'Campaign Director', 220, date(2025, 1, 1), date(2025, 3, 31), False),
+        (10002, 4, 'Campaign Manager', 200, date(2025, 1, 1), date(2025, 3, 31), False),
+        (10003, 4, 'Content Creator', 180, date(2025, 1, 1), date(2025, 3, 31), False),
         
         # Project 5: Product Line Expansion (Active)
         (4001, 5, 'Production Manager', 250, date(2023, 11, 1), None, True),
@@ -341,9 +341,9 @@ def generate_employee_projects():
         (5001, 5, 'Supply Chain Lead', 180, date(2023, 11, 1), None, True),
         
         # Project 6: Sales CRM (Active)
-        (9001, 6, 'Executive Sponsor', 80, date(2024, 1, 10), None, True),
-        (9002, 6, 'Implementation Lead', 150, date(2024, 1, 10), None, True),
-        (1005, 6, 'Technical Consultant', 120, date(2024, 1, 15), None, True),
+        (9001, 6, 'Executive Sponsor', 80, date(2025, 1, 10), None, True),
+        (9002, 6, 'Implementation Lead', 150, date(2025, 1, 10), None, True),
+        (1005, 6, 'Technical Consultant', 120, date(2025, 1, 15), None, True),
         
         # Project 7: Testing Framework (Active)
         (2001, 7, 'Project Manager', 140, date(2023, 10, 1), None, True),
@@ -367,26 +367,26 @@ def generate_milestones():
     """Generate project milestones"""
     milestones = [
         # Project 1
-        (1, 'Requirements Analysis', 'Gather and document requirements', date(2024, 2, 1), date(2024, 2, 5), 'completed', 'Requirements documented', 'None'),
-        (1, 'UI/UX Design', 'Create mockups and prototypes', date(2024, 2, 15), date(2024, 2, 20), 'completed', 'Designs approved', 'None'),
-        (1, 'Backend Development', 'Implement backend APIs', date(2024, 3, 15), None, 'in_progress', 'API endpoints 60% complete', 'Authentication and admin APIs'),
-        (1, 'Frontend Development', 'Build user interface', date(2024, 3, 20), None, 'in_progress', 'Core components built', 'Admin dashboard and reports'),
-        (1, 'Testing & QA', 'Quality assurance testing', date(2024, 4, 1), None, 'pending', 'None', 'Full test coverage needed'),
+        (1, 'Requirements Analysis', 'Gather and document requirements', date(2025, 2, 1), date(2025, 2, 5), 'completed', 'Requirements documented', 'None'),
+        (1, 'UI/UX Design', 'Create mockups and prototypes', date(2025, 2, 15), date(2025, 2, 20), 'completed', 'Designs approved', 'None'),
+        (1, 'Backend Development', 'Implement backend APIs', date(2025, 3, 15), None, 'in_progress', 'API endpoints 60% complete', 'Authentication and admin APIs'),
+        (1, 'Frontend Development', 'Build user interface', date(2025, 3, 20), None, 'in_progress', 'Core components built', 'Admin dashboard and reports'),
+        (1, 'Testing & QA', 'Quality assurance testing', date(2025, 4, 1), None, 'pending', 'None', 'Full test coverage needed'),
         
         # Project 3
-        (3, 'Data Assessment', 'Assess current data structure', date(2024, 2, 15), date(2024, 2, 18), 'completed', 'Assessment complete', 'None'),
-        (3, 'Migration Script Development', 'Develop migration scripts', date(2024, 3, 1), None, 'in_progress', 'Scripts 70% complete', 'Error handling and logging'),
-        (3, 'Test Migration', 'Run test migration', date(2024, 3, 25), None, 'pending', 'None', 'Waiting for scripts completion'),
+        (3, 'Data Assessment', 'Assess current data structure', date(2025, 2, 15), date(2025, 2, 18), 'completed', 'Assessment complete', 'None'),
+        (3, 'Migration Script Development', 'Develop migration scripts', date(2025, 3, 1), None, 'in_progress', 'Scripts 70% complete', 'Error handling and logging'),
+        (3, 'Test Migration', 'Run test migration', date(2025, 3, 25), None, 'pending', 'None', 'Waiting for scripts completion'),
         
         # Project 5
         (5, 'Market Research', 'Research target markets', date(2023, 12, 1), date(2023, 12, 15), 'completed', 'Research complete', 'None'),
-        (5, 'Product Design', 'Design new product variations', date(2024, 1, 15), date(2024, 1, 30), 'completed', 'Designs approved', 'None'),
-        (5, 'Prototype Development', 'Build prototypes', date(2024, 2, 28), None, 'in_progress', 'First prototypes built', 'Final iteration needed'),
+        (5, 'Product Design', 'Design new product variations', date(2025, 1, 15), date(2025, 1, 30), 'completed', 'Designs approved', 'None'),
+        (5, 'Prototype Development', 'Build prototypes', date(2025, 2, 28), None, 'in_progress', 'First prototypes built', 'Final iteration needed'),
         
         # Project 6
-        (6, 'Requirements Gathering', 'Define CRM requirements', date(2024, 1, 25), date(2024, 1, 28), 'completed', 'Requirements defined', 'None'),
-        (6, 'System Configuration', 'Configure CRM system', date(2024, 2, 15), None, 'in_progress', 'Basic config done', 'Custom fields and workflows'),
-        (6, 'User Training', 'Train sales team', date(2024, 3, 15), None, 'pending', 'None', 'Training materials to be created'),
+        (6, 'Requirements Gathering', 'Define CRM requirements', date(2025, 1, 25), date(2025, 1, 28), 'completed', 'Requirements defined', 'None'),
+        (6, 'System Configuration', 'Configure CRM system', date(2025, 2, 15), None, 'in_progress', 'Basic config done', 'Custom fields and workflows'),
+        (6, 'User Training', 'Train sales team', date(2025, 3, 15), None, 'pending', 'None', 'Training materials to be created'),
     ]
     
     try:

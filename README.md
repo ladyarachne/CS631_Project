@@ -14,18 +14,36 @@ This project implements a comprehensive database system for a company with:
 
 ```
 CS631_Project/
+├── .gitignore                     # Git ignore file (protects .env)
+├── .env.example                   # Template for environment variables
+├── requirements.txt               # Python dependencies
+├── test_connection.py             # Database connection diagnostic tool
 ├── database/
 │   └── schema.sql                 # Complete PostgreSQL DDL schema
 ├── documentation/
 │   ├── ER_Design_and_Decisions.md # ER diagram and design decisions
 │   └── Relational_Schema.md       # Relational schema documentation
-├── applications/
-│   ├── database_config.py         # Database connection management
-│   ├── hr_payroll_app.py          # HR/Payroll application
-│   ├── project_management_app.py  # Project management application
-│   ├── generate_sample_data.py    # Sample data generator
-│   └── demo.py                    # Comprehensive demo script
-└── README.md                      # This file
+└── applications/
+    ├── database_config.py         # Database connection management (secure)
+    ├── hr_payroll_app.py          # HR/Payroll application logic
+    ├── project_management_app.py  # Project management logic
+    ├── generate_sample_data.py    # Sample data generator
+    ├── demo.py                    # CLI demo script
+    ├── web_app.py                 # Flask web application ⭐ NEW
+    └── templates/                 # HTML templates for web interface
+        ├── base.html              # Base template with navigation
+        ├── home.html              # Home page
+        ├── hr_dashboard.html      # HR dashboard
+        ├── add_employee.html      # Add employee form (CREATE)
+        ├── view_employees.html    # View employees (READ)
+        ├── promote_employee.html  # Promote employee (UPDATE)
+        ├── payroll_report.html    # Payroll report (READ)
+        ├── project_dashboard.html # Project dashboard
+        ├── create_project.html    # Create project form (CREATE)
+        ├── view_projects.html     # View projects (READ)
+        ├── assign_employee.html   # Assign to project (CREATE)
+        ├── update_hours.html      # Update hours (UPDATE)
+        └── complete_milestone.html # Complete milestone (UPDATE)
 ```
 
 ## 🎯 Key Features
@@ -127,13 +145,40 @@ This will create:
 
 ## 💻 Running the Applications
 
-### Quick Demo
+### 🌐 Web Application (Recommended)
 
-Run the comprehensive demo to see all features in action:
+Run the Flask web interface for browser-based interaction:
 
 ```bash
 cd applications
-python demo.py
+python3 web_app.py
+```
+
+Then open your browser to: **http://localhost:5000**
+
+**Features:**
+- **HR Management Dashboard**
+  - Add new employees (CREATE)
+  - View employee roster (READ)
+  - Promote employees (UPDATE)
+  - Process monthly payroll (READ)
+  
+- **Project Management Dashboard**
+  - Create new projects (CREATE)
+  - View all projects (READ)
+  - Assign employees to projects (CREATE)
+  - Update project hours (UPDATE)
+  - Complete milestones (UPDATE/DEACTIVATE)
+
+The web interface demonstrates full CRUD operations through simple HTML forms - perfect for screenshots and academic presentations!
+
+### 🖥️ Command-Line Demo
+
+Run the comprehensive CLI demo to see all features in action:
+
+```bash
+cd applications
+python3 demo.py
 ```
 
 The demo demonstrates:
@@ -332,6 +377,39 @@ The modular design makes it easy to extend:
 - Add new methods to `HRPayrollApp` or `ProjectManagementApp` classes
 - Create new tables in `schema.sql`
 - Add new sample data in `generate_sample_data.py`
+
+## 🔒 Security Features
+
+This project implements secure credential management to safely publish on GitHub:
+
+### Environment Variables
+- Database credentials stored in `.env` file (not committed to git)
+- `.env` file is listed in `.gitignore`
+- `.env.example` provided as a template for other users
+- `python-dotenv` library loads credentials securely
+
+### What's Protected
+✅ Database passwords  
+✅ Database usernames  
+✅ Connection strings  
+✅ Any sensitive configuration  
+
+### GitHub Safety
+- **Safe to commit**: All code, schema, documentation, templates
+- **NOT committed**: `.env` file with actual credentials
+- **Included**: `.env.example` showing what credentials are needed
+
+### Testing Connection Security
+Run the diagnostic tool to verify your setup:
+```bash
+python3 test_connection.py
+```
+
+This will check:
+- ✓ .env file exists
+- ✓ Environment variables load correctly
+- ✓ Database connection works
+- ✓ No hardcoded credentials in code
 
 ## 🐛 Troubleshooting
 
