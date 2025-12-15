@@ -158,10 +158,10 @@ hr_app = HRPayrollApp()
 emp_info = hr_app.get_employee_info(1001)
 print_employee_info(emp_info)
 
-# Process payroll for March 2024
+# Process payroll for March 2025
 payroll = hr_app.process_payroll(
-    pay_period_start=date(2024, 3, 1),
-    pay_period_end=date(2024, 3, 31)
+    pay_period_start=date(2025, 3, 1),
+    pay_period_end=date(2025, 3, 31)
 )
 
 # Promote an employee
@@ -169,11 +169,11 @@ hr_app.update_employee_title(
     employee_number=1003,
     new_title='Senior Developer',
     new_salary=95000,
-    effective_date=date(2024, 4, 1)
+    effective_date=date(2025, 4, 1)
 )
 
 # Get annual tax summary
-tax_summary = hr_app.get_yearly_tax_summary(1001, 2024)
+tax_summary = hr_app.get_yearly_tax_summary(1001, 2025)
 
 # Cleanup
 close_connection_pool()
