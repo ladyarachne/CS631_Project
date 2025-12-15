@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Complete Milestone - CS631 Company Database{% endblock %}
+
+{% block content %}
+<h2>Complete Milestone (UPDATE/DEACTIVATE)</h2>
+
+{% if milestones %}
+<p>Select a milestone to mark as completed:</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Milestone ID</th>
+            <th>Project #</th>
+            <th>Milestone Name</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for milestone in milestones %}
+        <tr>
+            <td>{{ milestone[0] }}</td>
+            <td>{{ milestone[1] }}</td>
+            <td>{{ milestone[2] }}</td>
+            <td>{{ milestone[3] }}</td>
+            <td>
+                <form method="POST" action="/projects/complete_milestone" style="display:inline;">
+                    <input type="hidden" name="milestone_id" value="{{ milestone[0] }}">
+                    <input type="date" name="completion_date" required>
+                    <button type="submit">Complete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No pending or in-progress milestones found.</p>
+{% endif %}
+
+<hr>
+<h3>Or enter manually:</h3>
+<form method="POST" action="/projects/complete_milestone">
+    <label>Milestone ID:</label><br>
+    <input type="number" name="milestone_id" required><br><br>
+    
+    <label>Completion Date:</label><br>
+    <input type="date" name="completion_date" required><br><br>
+    
+    <button type="submit">Complete Milestone</button>
+    <a href="/projects"><button type="button">Cancel</button></a>
+</form>
+
+<p><a href="/projects">← Back to Project Dashboard</a></p>
+{% endblock %}

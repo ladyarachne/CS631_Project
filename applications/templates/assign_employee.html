@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Assign Employee - CS631 Company Database{% endblock %}
+
+{% block content %}
+<h2>Assign Employee to Project (CREATE)</h2>
+
+<form method="POST" action="/projects/assign">
+    <label>Employee ID:</label><br>
+    <input type="number" name="employee_id" required><br><br>
+    
+    <label>Project Number:</label><br>
+    <input type="number" name="project_number" required><br><br>
+    
+    <label>Role on Project:</label><br>
+    <input type="text" name="role" required placeholder="e.g., Developer, Designer, QA"><br><br>
+    
+    <label>Start Date:</label><br>
+    <input type="date" name="start_date" required><br><br>
+    
+    <button type="submit">Assign Employee</button>
+    <a href="/projects"><button type="button">Cancel</button></a>
+</form>
+
+<p><strong>Note:</strong> Both employee and project must already exist in the system.</p>
+
+<p>
+    <a href="/hr/employees">View Employees</a> | 
+    <a href="/projects/list">View Projects</a>
+</p>
+{% endblock %}

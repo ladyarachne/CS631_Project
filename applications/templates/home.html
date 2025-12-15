@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Home - CS631 Company Database{% endblock %}
+
+{% block content %}
+<h2>Welcome to the Company Database System</h2>
+
+<p>This web application provides access to Human Resource Management and Project Management functions.</p>
+
+<h3>Available Modules:</h3>
+
+<ul>
+    <li><a href="/hr"><strong>Human Resource Management</strong></a>
+        <ul>
+            <li>Add new employees</li>
+            <li>View employee roster</li>
+            <li>Promote employees</li>
+            <li>Process payroll</li>
+        </ul>
+    </li>
+    
+    <li><a href="/projects"><strong>Project Management</strong></a>
+        <ul>
+            <li>Create new projects</li>
+            <li>View all projects</li>
+            <li>Assign employees to projects</li>
+            <li>Update project hours</li>
+            <li>Complete milestones</li>
+        </ul>
+    </li>
+</ul>
+
+<p>Select a module above to get started.</p>
+{% endblock %}

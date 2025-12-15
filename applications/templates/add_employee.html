@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Add Employee - CS631 Company Database{% endblock %}
+
+{% block content %}
+<h2>Add New Employee (CREATE)</h2>
+
+<form method="POST" action="/hr/add_employee">
+    <h3>Personal Information</h3>
+    <label>Employee Number:</label><br>
+    <input type="number" name="employee_number" required><br><br>
+    
+    <label>First Name:</label><br>
+    <input type="text" name="first_name" required><br><br>
+    
+    <label>Last Name:</label><br>
+    <input type="text" name="last_name" required><br><br>
+    
+    <h3>Job Information</h3>
+    <label>Job Title:</label><br>
+    <input type="text" name="title" required><br><br>
+    
+    <label>Employment Type:</label><br>
+    <select name="employment_type" id="employment_type" required onchange="toggleSalaryField()">
+        <option value="salaried">Salaried</option>
+        <option value="hourly">Hourly</option>
+    </select><br><br>
+    
+    <div id="salary_field">
+        <label>Annual Salary:</label><br>
+        <input type="number" step="0.01" name="salary" id="salary"><br><br>
+    </div>
+    
+    <div id="hourly_field" style="display:none;">
+        <label>Hourly Rate:</label><br>
+        <input type="number" step="0.01" name="hourly_rate" id="hourly_rate"><br><br>
+    </div>
+    
+    <label>Department ID:</label><br>
+    <input type="number" name="department_id" required><br><br>
+    
+    <label>Start Date:</label><br>
+    <input type="date" name="start_date" required><br><br>
+    
+    <button type="submit">Add Employee</button>
+    <a href="/hr"><button type="button">Cancel</button></a>
+</form>
+
+<script>
+function toggleSalaryField() {
+    var empType = document.getElementById('employment_type').value;
+    var salaryField = document.getElementById('salary_field');
+    var hourlyField = document.getElementById('hourly_field');
+    
+    if (empType === 'salaried') {
+        salaryField.style.display = 'block';
+        hourlyField.style.display = 'none';
+        document.getElementById('salary').required = true;
+        document.getElementById('hourly_rate').required = false;
+    } else {
+        salaryField.style.display = 'none';
+        hourlyField.style.display = 'block';
+        document.getElementById('salary').required = false;
+        document.getElementById('hourly_rate').required = true;
+    }
+}
+</script>
+{% endblock %}

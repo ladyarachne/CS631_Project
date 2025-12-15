@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}HR Management - CS631 Company Database{% endblock %}
+
+{% block content %}
+<h2>Human Resource Management</h2>
+
+<h3>Employee Management</h3>
+<ul>
+    <li><a href="/hr/add_employee">Add New Employee</a> - Create a new employee record</li>
+    <li><a href="/hr/employees">View All Employees</a> - Display current employee roster</li>
+    <li><a href="/hr/promote">Promote Employee</a> - Update employee title and salary</li>
+</ul>
+
+<h3>Payroll Management</h3>
+<ul>
+    <li><a href="/hr/payroll">Process Payroll</a> - Process monthly payroll and view reports</li>
+</ul>
+
+<p><a href="/">← Back to Home</a></p>
+{% endblock %}

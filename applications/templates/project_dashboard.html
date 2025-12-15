@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Project Management - CS631 Company Database{% endblock %}
+
+{% block content %}
+<h2>Project Management</h2>
+
+<h3>Project Operations</h3>
+<ul>
+    <li><a href="/projects/create">Create New Project</a> - Add a new project to the system</li>
+    <li><a href="/projects/list">View All Projects</a> - Display all projects and their status</li>
+</ul>
+
+<h3>Team Management</h3>
+<ul>
+    <li><a href="/projects/assign">Assign Employee to Project</a> - Add team members to projects</li>
+    <li><a href="/projects/hours">Update Project Hours</a> - Record hours worked by employees</li>
+</ul>
+
+<h3>Milestone Management</h3>
+<ul>
+    <li><a href="/projects/complete_milestone">Complete Milestone</a> - Mark project milestones as completed</li>
+</ul>
+
+<p><a href="/">← Back to Home</a></p>
+{% endblock %}

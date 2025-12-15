@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Create Project - CS631 Company Database{% endblock %}
+
+{% block content %}
+<h2>Create New Project (CREATE)</h2>
+
+<form method="POST" action="/projects/create">
+    <h3>Project Information</h3>
+    <label>Project Number:</label><br>
+    <input type="number" name="project_number" required><br><br>
+    
+    <label>Project Name:</label><br>
+    <input type="text" name="project_name" required size="50"><br><br>
+    
+    <label>Budget:</label><br>
+    <input type="number" step="0.01" name="budget" required><br><br>
+    
+    <label>Start Date:</label><br>
+    <input type="date" name="start_date" required><br><br>
+    
+    <label>Project Manager (Employee ID):</label><br>
+    <input type="number" name="manager_id" required><br><br>
+    
+    <label>Department ID:</label><br>
+    <input type="number" name="department_id" required><br><br>
+    
+    <button type="submit">Create Project</button>
+    <a href="/projects"><button type="button">Cancel</button></a>
+</form>
+
+<p><strong>Note:</strong> The project manager must be an existing employee. Use the HR system to find employee IDs.</p>
+{% endblock %}
